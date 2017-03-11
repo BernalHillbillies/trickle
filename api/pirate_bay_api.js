@@ -1,6 +1,6 @@
-var PirateBay = require('thepiratebay');
+import PirateBay from 'thepiratebay';
 
-const searchVideos = (query) => (
+export const searchVideos = (query) => (
   PirateBay.search(query, {
     category: 'video',
     orderBy: 'seeds',
