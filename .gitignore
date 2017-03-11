@@ -2,6 +2,5 @@ node_modules/
 .DS_Store
 npm-debug.log
 dist/
-node_modules
 apps/*
 .jshintrc
