@@ -1,4 +1,5 @@
 node_modules
+apps/*
 bundle.js
 bundle.js.map
 .jshintrc
