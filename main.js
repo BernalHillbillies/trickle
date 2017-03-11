@@ -1,3 +1,6 @@
+// import function to render React UI
+import renderReactUI from './frontend/reactRootNode';
+
 const electron = require('electron')
 // Module to control application life.
 const app = electron.app
