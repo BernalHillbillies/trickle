@@ -1,4 +1,4 @@
-node_modules
-apps/*
-bundle.js
-bundle.js.map
+node_modules/
+.DS_Store
+npm-debug.log
+dist/
