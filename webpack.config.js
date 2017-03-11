@@ -1,25 +1,23 @@
-
 module.exports = {
-  context: __dirname,
-  entry: "./frontend/root.js",
-  output: {
-    path: "./",
-    filename: "bundle.js"
-  },
-  module: {
-    loaders: [
-      {
-        test: [/\.jsx?$/, /\.js?$/],
-        exclude: /node_modules/,
-        loader: 'babel',
-        query: {
-          presets: ['react', 'es2015']
-        }
-      },
-    ]
-  },
-  resolve: {
-    extensions: ["", ".js", ".jsx"]
-  },
-  devtool: 'source-map'
+ entry: "./main.js",
+ output: {
+   filename: "./bundle.js"
+ },
+ module: {
+   loaders: [
+     {
+       test: [/\.jsx?$/, /\.js?$/],
+       exclude: /(node_modules)/,
+       loader: 'babel-loader',
+       query: {
+         presets: ['es2015', 'react']
+       }
+     }
+   ]
+ },
+ devtool: 'source-map',
+ resolve: {
+   extensions: [".js", ".jsx" ]
+ },
+ target: 'electron-renderer',
 };

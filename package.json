@@ -20,13 +20,14 @@
     "electron": "^1.4.1"
   },
   "dependencies": {
-    "babel": "^6.23.0",
     "babel-core": "^6.23.1",
-    "babel-loader": "^6.4.0",
+    "babel-loader": "^6.3.2",
     "babel-preset-es2015": "^6.22.0",
     "babel-preset-react": "^6.23.0",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "webpack": "^2.2.1"
+    "electron": "^1.4.1",
+    "fs": "0.0.1-security",
+    "thepiratebay": "^1.3.3",
+    "webpack": "^2.2.1",
+    "webpack-target-electron-renderer": "^0.4.0"
   }
 }
