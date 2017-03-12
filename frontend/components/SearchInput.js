@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { searchVideos } from '../../api/pirate_bay_api';
 import { runPeerFlix } from '../../api/peerflix_api.js';
-import ToolTip from './tooltip.js'
+import ToolTip from './tooltip.js';
 
 export default class SearchInput extends Component {
   constructor() {
