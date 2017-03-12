@@ -19,7 +19,6 @@ export default class SearchInput extends Component {
 
   _startStream(event) {
     const magnetLink = event.target.dataset.magnetlink;
-    debugger;
     runPeerFlix(magnetLink);
   }
 
