@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { searchVideos } from '../../api/pirate_bay_api';
+import { runPeerFlix } from '../../api/peerflix_api.js';
 
 export default class SearchInput extends Component {
   constructor() {
@@ -13,11 +14,14 @@ export default class SearchInput extends Component {
     this._handleInputChange = this._handleInputChange.bind(this);
   }
 
+  _startStream(event) {
+    runPeerFlix(event.target.id);
+  }
+
   _handleInputChange(event) {
     const value = event.target.value;
     searchVideos(value)
       .then((res) => {
-        console.log(res);
         this.setState({results: res});
       });
   }
@@ -32,9 +36,9 @@ export default class SearchInput extends Component {
           onChange={() => this._handleInputChange}
           placeholder={'what should we watch?'}
         />
-        <div className={'searchResultsWrapper'}>
+        <div className={'searchResultsWrapper'} onClick={this._startStream}>
           {results.map((result, resultIndex) => (
-            <div className={'searchResultWrapper'} key={resultIndex}>
+            <div className={'searchResultWrapper'} id={result.magnetLink} key={resultIndex}>
               {result.name}
             </div>
           ))}
