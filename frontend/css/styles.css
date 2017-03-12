@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background: #fffdf0;
+  background: #fffffd;
   font-family: 'Lato', sans-serif;
 }
 
@@ -23,7 +23,7 @@ body {
 .dashboardHeader {
   margin: 20px 0 3px;
 
-  color: #e3bbff;
+  color: #eacf8d;
   font-family: 'Monofett', cursive;
   font-size: 40px;
   line-height: 28px;
@@ -36,7 +36,7 @@ body {
 .dashboardSubHeader {
   margin: 5px 0;
 
-  color: #9583bf;
+  color: #bfab83;
   font-weight: 400;
   font-size: 13px;
 }
@@ -46,7 +46,7 @@ body {
 
 .searchInput {
   border: none;
-  border-bottom: 2px inset #d9c4e0;
+  border-bottom: 2px inset #e0d2c4;
 
   width: 340px;
   height: 40px;
@@ -62,7 +62,7 @@ body {
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: rgba(225, 193, 241, 0.54);
+  color: #efd1a9;
   font-weight: 300;
 }
 
@@ -75,13 +75,15 @@ body {
 }
 
 .searchResultsWrapperEmpty {
-  padding-top: 100px;
+  padding-top: 40px;
 
   color: #f7d4dd;
 
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  opacity: 0.2;
 }
 
 .searchResultWrapper {
@@ -94,7 +96,7 @@ body {
 }
 
 .searchResultWrapper:hover {
-  color: #8f42f4;
+  color: #bf811c;
   transition: all ease 0.2s;
   margin-left: 2px;
 }
