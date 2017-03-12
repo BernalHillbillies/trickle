@@ -4,7 +4,7 @@ const webpackTargetElectronRenderer = require('webpack-target-electron-renderer'
 const path = require('path')
 
 // Load base config
-const baseConfig = require('./webpack.config.base')
+const baseConfig = require('./webpack.config.js')
 
 // Create the config
 const config = Object.create(baseConfig)
