@@ -34,7 +34,7 @@ export default class SearchInput extends Component {
           onChange={this._handleInputChange}
           placeholder={'what should we watch?'}
         />
-        <div className={'searchResultsWrapper'} onClick={this._startStream}>
+        <div onClick={this._startStream}>
           {results.map((result, resultIndex) => (
             <div className={'searchResultWrapper'} id={result.magnetLink} key={resultIndex}>
               {result.name}
