@@ -4,5 +4,5 @@ import Dashboard from './components/Dashboard';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
-  ReactDOM.render(<Dashboard />, root)
+  ReactDOM.render(<Dashboard />, root);
 });
