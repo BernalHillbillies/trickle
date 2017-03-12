@@ -11,8 +11,8 @@ const config = Object.create(baseConfig)
 
 // Set entry points
 config.entry = [
-    'webpack-hot-middleware/client?path=http://localhost:4000/__webpack_hmr&reload=true',
-    path.join(__dirname, '/frontend/root.js')
+  'webpack-hot-middleware/client?path=http://localhost:4000/__webpack_hmr&reload=true',
+  path.join(__dirname, '/frontend/root.js')
 ]
 
 // Set output

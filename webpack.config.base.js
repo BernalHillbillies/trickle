@@ -12,10 +12,6 @@ const config = {
 	module: {
 		loaders: [
 			{
-				test: /\.scss$/,
-				loaders: ['style', 'css?modules', 'postcss', 'sass']
-			},
-			{
 				test: /\.js$/,
 				exclude: /node_modules/,
 				loaders: ['babel']
@@ -28,11 +24,6 @@ const config = {
 				test: /\.json$/,
 				loaders: ['json']
 			}
-		]
-	},
-	postcss: function() {
-		return [
-			require('autoprefixer')
 		]
 	},
 	plugins: []
