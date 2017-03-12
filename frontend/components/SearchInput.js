@@ -18,7 +18,8 @@ export default class SearchInput extends Component {
   }
 
   _startStream(event) {
-    const magnetLink = event.target.dataset.magnetLink;
+    const magnetLink = event.target.dataset.magnetlink;
+    debugger;
     runPeerFlix(magnetLink);
   }
 
@@ -55,8 +56,8 @@ export default class SearchInput extends Component {
             {results.map((result, resultIndex) => (
               <div
                 className={'searchResultWrapper'}
-                id={result.magnetLink}
                 key={resultIndex}
+                data-magnetlink={result.magnetLink}
               >
                 {result.name}
               </div>
