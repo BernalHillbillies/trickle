@@ -4,6 +4,7 @@ import ToolTip from './tooltip.js';
 
 import { searchVideos } from '../../api/pirate_bay_api';
 import { runPeerFlix } from '../../api/peerflix_api.js';
+import { bindAll } from 'lodash';
 
 const waffleImageSmall = require("file-loader!../img/waffle_symbol.png");
 
@@ -13,8 +14,10 @@ export default class SearchInput extends Component {
     this.state = {
       results: [],
       searchInput: '',
+      debounceTimer: null,
     };
-    this._handleInputChange = this._handleInputChange.bind(this);
+
+    bindAll(this, '_handleInputChange', '_debounce');
   }
 
   _startStream(event) {
@@ -26,11 +29,17 @@ export default class SearchInput extends Component {
     const value = event.target.value;
 
     this.setState({ searchInput: value });
+    this._debounce(200, searchVideos, value);
+  }
 
-    searchVideos(value)
-    .then((res) => {
-      this.setState({results: res});
-    });
+  _debounce(delay, fn, value) {
+    let context = this;
+    clearTimeout(this.state.debounceTimer);
+    this.state.debounceTimer = setTimeout(() => {
+      fn.apply(context, [value]).then((res) => {
+        this.setState({results: res});
+      })
+    }, delay);
   }
 
   render() {
