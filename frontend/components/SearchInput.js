@@ -49,10 +49,10 @@ export default class SearchInput extends Component {
         {areResults ? (
           <div>
             {results.map((result, resultIndex) => (
-              <div
+              <dive
                 className={'searchResultWrapper'}
-                id={result.magnetLink}
                 key={resultIndex}
+                data-magnetLink={result.magnetLink}
               >
                 {result.name}
               </div>
