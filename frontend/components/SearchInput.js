@@ -24,10 +24,12 @@ export default class SearchInput extends Component {
   _handleInputChange(event) {
     const value = event.target.value;
 
-    searchVideos(value)
-      .then((res) => {
-        this.setState({results: res});
-      });
+    if ( value && value !== '' ) {
+      searchVideos(value)
+        .then((res) => {
+          this.setState({results: res});
+        });
+    }
   }
 
   render() {
