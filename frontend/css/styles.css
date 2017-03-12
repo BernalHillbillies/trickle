@@ -73,3 +73,14 @@ body {
 .searchResultWrapper:hover {
   color: #8f42f4;
 }
+
+#tooltip {
+  background: white;
+  padding: 5px;
+}
+
+#tooltip ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

@@ -25,7 +25,7 @@ export default class SearchInput extends Component {
   _toggleToolTip(event) {
     this.setState({
       toolTipOpen: true,
-      toolTipLocation: {x: event.pageX, y: event.pageY},
+      toolTipLocation: {x: event.pageX + 10, y: event.pageY + 10},
       toolTipTorrent: this.state.results[event.target.dataset.index]
     });
   }
