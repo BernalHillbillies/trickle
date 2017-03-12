@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background: #fffdf0;
+  background: #fffffd;
   font-family: 'Lato', sans-serif;
 }
 
@@ -75,13 +75,15 @@ body {
 }
 
 .searchResultsWrapperEmpty {
-  padding-top: 100px;
+  padding-top: 40px;
 
   color: #f7d4dd;
 
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  opacity: 0.2;
 }
 
 .searchResultWrapper {

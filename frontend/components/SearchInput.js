@@ -5,6 +5,7 @@ import ToolTip from './tooltip.js';
 import { searchVideos } from '../../api/pirate_bay_api';
 import { runPeerFlix } from '../../api/peerflix_api.js';
 
+const waffleImageSmall = require("file-loader!../img/waffle_symbol.png");
 
 export default class SearchInput extends Component {
   constructor() {
@@ -60,7 +61,7 @@ export default class SearchInput extends Component {
           </div>
         ) : (
           <div>
-            {':('}
+            <img src={waffleImageSmall} />
           </div>
         )}
         </div>
