@@ -1,20 +1,18 @@
 import React, { Component } from 'react';
+import classnames from 'classnames';
+import ToolTip from './tooltip.js';
+
 import { searchVideos } from '../../api/pirate_bay_api';
 import { runPeerFlix } from '../../api/peerflix_api.js';
-import ToolTip from './tooltip.js';
+
 
 export default class SearchInput extends Component {
   constructor() {
     super();
     this.state = {
       results: [],
-      toolTipOpen: false,
-      toolTipLocation: {x: 0, y: 0},
-      toolTipTorrent: null
     };
     this._handleInputChange = this._handleInputChange.bind(this);
-    this._toggleToolTip = this._toggleToolTip.bind(this);
-    this._closeToolTip = this._closeToolTip.bind(this);
   }
 
   _startStream(event) {
@@ -22,29 +20,23 @@ export default class SearchInput extends Component {
     runPeerFlix(magnetLink);
   }
 
-  _toggleToolTip(event) {
-    this.setState({
-      toolTipOpen: true,
-      toolTipLocation: {x: event.pageX + 10, y: event.pageY + 10},
-      toolTipTorrent: this.state.results[event.target.dataset.index]
-    });
-  }
-
-  _closeToolTip() {
-    this.setState({ toolTipOpen: false });
-  }
-
   _handleInputChange(event) {
     const value = event.target.value;
 
-    searchVideos(value)
+    if ( value && value !== '' ) {
+      searchVideos(value)
       .then((res) => {
         this.setState({results: res});
       });
+    }
+    else {
+      this.setState({ results: [] });
+    }
   }
 
   render() {
     const { results } = this.state;
+    const areResults = results.length > 0;
     return (
       <div className={'searchInputWrapper'}>
         <input
@@ -53,18 +45,29 @@ export default class SearchInput extends Component {
           onChange={this._handleInputChange}
           placeholder={'what should we watch?'}
         />
-        <div onClick={this._startStream}>
-          <ToolTip open={this.state.toolTipOpen} location={this.state.toolTipLocation} torrent={this.state.toolTipTorrent} />
-          {results.map((torrent, index) => (
-            <div className={'searchResultWrapper'}
-                 data-magnet-link={torrent.magnetLink}
-                 data-index={index}
-                 key={torrent.magnetLink}
-                 onMouseEnter={this._toggleToolTip}
-                 onMouseLeave={this._closeToolTip}>
-              {torrent.name}
-            </div>
-          ))}
+        <div
+          className={classnames(
+            areResults ? 'searchResultsWrapper' : 'searchResultsWrapperEmpty',
+          )}
+          onClick={this._startStream}
+        >
+        {areResults ? (
+          <div>
+            {results.map((result, resultIndex) => (
+              <div
+                className={'searchResultWrapper'}
+                id={result.magnetLink}
+                key={resultIndex}
+              >
+                {result.name}
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div>
+            {':('}
+          </div>
+        )}
         </div>
       </div>
     );

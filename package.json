@@ -36,6 +36,7 @@
     "dotenv": "^1.2.0",
     "electron-packager": "^8.5.2",
     "express": "^4.13.3",
+    "file-loader": "^0.10.1",
     "hot-reload-server": "0.0.4",
     "json-loader": "^0.5.4",
     "webpack": "^1.12.9",
@@ -44,7 +45,11 @@
     "webpack-target-electron-renderer": "^0.3.0"
   },
   "dependencies": {
+<<<<<<< HEAD
+    "classnames": "^2.2.5",
+=======
     "dotenv": "^1.2.0",
+>>>>>>> 023ad6b2be277b298a0720d4dc9a4870e3d5ff8a
     "electron": "^1.6.2",
     "node-run-cmd": "^1.0.1",
     "peerflix": "^0.36.1",
