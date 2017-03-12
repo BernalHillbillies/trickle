@@ -1,9 +1,0 @@
-.searchResultWrapper {
-  margin-top: 10px;
-  font-size: 150%;
-}
-
-.searchResultWrapper:hover {
-  cursor: pointer;
-  color: #8f42f4;
-}

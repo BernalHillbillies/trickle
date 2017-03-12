@@ -31,7 +31,7 @@ export default class SearchInput extends Component {
   }
 
   _closeToolTip() {
-    this.setState({ toolTipOpen: false })
+    this.setState({ toolTipOpen: false });
   }
 
   _handleInputChange(event) {

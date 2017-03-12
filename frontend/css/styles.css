@@ -1,13 +1,20 @@
 body {
   margin: 0;
-  background: #fffbe3;
+  background: #fffdf0;
   font-family: 'Lato', sans-serif;
 }
 
 .dashboardContainer {
+  margin-left: 30px;
+
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+}
+
+.dashboardHeadersWrapper {
+  -webkit-user-select: none;
+  cursor: default;
 }
 
 .dashboardHeader {
@@ -53,9 +60,16 @@ body {
 .searchResultsWrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .searchResultWrapper {
-  height: 30px;
+  margin-top: 10px;
+  font-size: 14px;
+
+  cursor: pointer;
+}
+
+.searchResultWrapper:hover {
+  color: #8f42f4;
 }
