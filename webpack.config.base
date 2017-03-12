@@ -23,6 +23,10 @@ const config = {
 			{
 				test: /\.json$/,
 				loaders: ['json']
+			},
+			{
+			  test: /\.svg$/,
+			  loader: 'babel!svg-react'
 			}
 		]
 	},

@@ -41,7 +41,7 @@ body {
   border: none;
   border-bottom: 2px inset #d9c4e0;
 
-  width: 300px;
+  width: 340px;
   height: 40px;
 
   color: #525252;
@@ -58,9 +58,17 @@ body {
 }
 
 .searchResultsWrapper {
+  margin-bottom: 20px;
+
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+
+.searchResultsWrapperEmpty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .searchResultWrapper {
