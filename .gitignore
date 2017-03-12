@@ -4,3 +4,5 @@ npm-debug.log
 dist/
 apps/*
 .jshintrc
+bundle.js
+bundle.js.map
