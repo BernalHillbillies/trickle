@@ -28,9 +28,17 @@ body {
 }
 
 .searchInputWrapper {
-
 }
 
 .searchInput {
+}
 
+.searchResultsWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.searchResultWrapper {
+  height: 30px;
 }
