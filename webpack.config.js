@@ -23,7 +23,7 @@ const config = {
 			{
 				test: /\.json$/,
 				loaders: ['json']
-			}
+			},
 		]
 	},
 	plugins: []
