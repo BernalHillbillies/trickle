@@ -19,7 +19,7 @@ export default class SearchInput extends Component {
 
   _startStream(event) {
     const magnetLink = event.target.dataset.magnetLink;
-    runPeerFlix(event.target.id);
+    runPeerFlix(magnetLink);
   }
 
   _toggleToolTip(event) {
