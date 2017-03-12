@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
+import ToolTip from './tooltip.js';
 
 import { searchVideos } from '../../api/pirate_bay_api';
 import { runPeerFlix } from '../../api/peerflix_api.js';
-
-const waffleImage = require("file-loader!../img/waffle_symbol.svg");
 
 
 export default class SearchInput extends Component {
@@ -17,16 +16,22 @@ export default class SearchInput extends Component {
   }
 
   _startStream(event) {
-    runPeerFlix(event.target.id);
+    const magnetLink = event.target.dataset.magnetLink;
+    runPeerFlix(magnetLink);
   }
 
   _handleInputChange(event) {
     const value = event.target.value;
 
-    searchVideos(value)
+    if ( value && value !== '' ) {
+      searchVideos(value)
       .then((res) => {
         this.setState({results: res});
       });
+    }
+    else {
+      this.setState({ results: [] });
+    }
   }
 
   render() {

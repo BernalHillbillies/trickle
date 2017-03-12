@@ -13,6 +13,9 @@ body {
 }
 
 .dashboardHeadersWrapper {
+  display: flex;
+  align-items: flex-end;
+
   -webkit-user-select: none;
   cursor: default;
 }
@@ -24,6 +27,10 @@ body {
   font-family: 'Monofett', cursive;
   font-size: 40px;
   line-height: 28px;
+}
+
+.dashboardHeaderImage {
+  margin-right: 10px;
 }
 
 .dashboardSubHeader {
