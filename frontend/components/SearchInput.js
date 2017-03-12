@@ -18,16 +18,10 @@ export default class SearchInput extends Component {
   _handleInputChange(event) {
     const value = event.target.value;
 
-    if ( value === '' ) {
-      this.setState({ results: [] });
-    }
-
-    if ( value && value !== '' ) {
-      searchVideos(value)
-        .then((res) => {
-          this.setState({results: res});
-        });
-    }
+    searchVideos(value)
+      .then((res) => {
+        this.setState({results: res});
+      });
   }
 
   render() {
@@ -41,14 +35,15 @@ export default class SearchInput extends Component {
           placeholder={'what should we watch?'}
         />
         <div className={'searchResultsWrapper'} onClick={this._startStream}>
-          {results.map((result, resultIndex) => {
-            console.log('search result', result);
-            return (
-              <div className={'searchResultWrapper'} id={result.magnetLink} key={resultIndex}>
-                {result.name}
-              </div>
-            );
-          })}
+          {results.map((result, resultIndex) => (
+            <div
+              className={'searchResultWrapper'}
+              id={result.magnetLink}
+              key={resultIndex}
+            >
+              {result.name}
+            </div>
+          ))}
         </div>
       </div>
     );
