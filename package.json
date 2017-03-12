@@ -1,10 +1,13 @@
 {
-  "name": "electon-react-boilerplate",
+  "name": "Waffle",
   "version": "0.0.1",
   "description": "Electron React Boilerplate",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=frontend/img/waffle.icns --prune=true --out=release-builds",
+    "package-win": "electron-packager . --overwrite --asar=true --platform=win32 --arch=ia32 --icon=frontend/img/waffle.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Waffle\"",
+    "package-linux": "electron-packager . --overwrite --platform=linux --arch=x64 --icon=assetfrontend/img/waffle.png --prune=true --out=release-builds"
   },
   "repository": {
     "type": "git",
@@ -32,6 +35,7 @@
     "better-npm-run": "0.0.5",
     "electron-packager": "^8.5.2",
     "express": "^4.13.3",
+    "file-loader": "^0.10.1",
     "hot-reload-server": "0.0.4",
     "json-loader": "^0.5.4",
     "webpack": "^1.12.9",
@@ -40,6 +44,7 @@
     "webpack-target-electron-renderer": "^0.3.0"
   },
   "dependencies": {
+    "classnames": "^2.2.5",
     "dotenv": "^1.2.0",
     "electron": "^1.6.2",
     "node-run-cmd": "^1.0.1",
