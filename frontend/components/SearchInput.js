@@ -12,6 +12,7 @@ export default class SearchInput extends Component {
     super();
     this.state = {
       results: [],
+      searchInput: '',
     };
     this._handleInputChange = this._handleInputChange.bind(this);
   }
@@ -24,17 +25,17 @@ export default class SearchInput extends Component {
   _handleInputChange(event) {
     const value = event.target.value;
 
-    if ( value && value !== '' ) {
-      searchVideos(value)
-        .then((res) => {
-          this.setState({results: res});
-        });
-    }
+    this.setState({ searchInput: value });
+
+    searchVideos(value)
+    .then((res) => {
+      this.setState({results: res});
+    });
   }
 
   render() {
-    const { results } = this.state;
-    const areResults = results.length > 0;
+    const { results, searchInput } = this.state;
+    const isSearchInput = searchInput.length > 0;
     return (
       <div className={'searchInputWrapper'}>
         <input
@@ -45,11 +46,11 @@ export default class SearchInput extends Component {
         />
         <div
           className={classnames(
-            areResults ? 'searchResultsWrapper' : 'searchResultsWrapperEmpty',
+            isSearchInput ? 'searchResultsWrapper' : 'searchResultsWrapperEmpty',
           )}
           onClick={this._startStream}
         >
-        {areResults ? (
+        {isSearchInput ? (
           <div>
             {results.map((result, resultIndex) => (
               <div
