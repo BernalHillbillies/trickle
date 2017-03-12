@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import Dashboard from './components/dashboard';
+import Dashboard from './components/Dashboard';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');

@@ -1,3 +1,36 @@
-.hello {
-  color: lightblue;
+body {
+  margin: 0;
+  background: #fffbe3;
+  font-family: 'Lato', sans-serif;
+}
+
+.dashboardContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dashboardHeader {
+  margin: 20px 0 3px;
+
+  color: #e3bbff;
+  font-family: 'Monofett', cursive;
+  font-size: 40px;
+  line-height: 28px;
+}
+
+.dashboardSubHeader {
+  margin: 5px 0;
+
+  color: #9583bf;
+  font-weight: 400;
+  font-size: 13px;
+}
+
+.searchInputWrapper {
+
+}
+
+.searchInput {
+
 }

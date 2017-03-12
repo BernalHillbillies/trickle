@@ -24,8 +24,8 @@ app.on('ready', function() {
 
   // creates a new browser window
   mainWindow = new BrowserWindow({
-    width: 500,
-    height: 500
+    width: 400,
+    height: 400
   })
   // load the file
   mainWindow.loadURL('file://' + __dirname + '/index.html')
