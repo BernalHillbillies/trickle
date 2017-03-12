@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { searchVideos } from '../../api/pirate_bay_api';
 
 export default class SearchInput extends Component {
   constructor() {
@@ -9,11 +10,16 @@ export default class SearchInput extends Component {
         'another example :)',
       ],
     };
+    this._handleInputChange = this._handleInputChange.bind(this);
   }
 
   _handleInputChange(event) {
     const value = event.target.value;
-    // do something with this value
+    searchVideos(value)
+      .then((res) => {
+        console.log(res);
+        this.setState({results: res});
+      });
   }
 
   render() {
@@ -27,11 +33,11 @@ export default class SearchInput extends Component {
           placeholder={'what should we watch?'}
         />
         <div className={'searchResultsWrapper'}>
-          {results.map((result, resultIndex) => {
+          {results.map((result, resultIndex) => (
             <div className={'searchResultWrapper'} key={resultIndex}>
-              {result}
+              {result.name}
             </div>
-          })}
+          ))}
         </div>
       </div>
     );
