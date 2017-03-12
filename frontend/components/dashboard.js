@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Dashboard = () => (
-  <div>
+  <div className={'hello'}>
     {'hello :)'}
   </div>
 );
