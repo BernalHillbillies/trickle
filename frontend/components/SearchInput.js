@@ -6,10 +6,7 @@ export default class SearchInput extends Component {
   constructor() {
     super();
     this.state = {
-      results: [
-        'example result',
-        'another example :)',
-      ],
+      results: [],
     };
     this._handleInputChange = this._handleInputChange.bind(this);
   }
@@ -20,6 +17,7 @@ export default class SearchInput extends Component {
 
   _handleInputChange(event) {
     const value = event.target.value;
+
     searchVideos(value)
       .then((res) => {
         this.setState({results: res});
@@ -33,7 +31,7 @@ export default class SearchInput extends Component {
         <input
           type={'text'}
           className={'searchInput'}
-          onChange={() => this._handleInputChange}
+          onChange={this._handleInputChange}
           placeholder={'what should we watch?'}
         />
         <div className={'searchResultsWrapper'} onClick={this._startStream}>
