@@ -31,6 +31,23 @@ body {
 }
 
 .searchInput {
+  border: none;
+  border-bottom: 2px inset #d9c4e0;
+
+  width: 300px;
+  height: 40px;
+
+  color: #525252;
+  font-size: 25px;
+  background: transparent;
+}
+
+.searchInput:focus {
+  outline: 0;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: rgba(225, 193, 241, 0.54);
 }
 
 .searchResultsWrapper {

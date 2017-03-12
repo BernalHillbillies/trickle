@@ -24,6 +24,7 @@ export default class SearchInput extends Component {
           type={'text'}
           className={'searchInput'}
           onChange={() => this._handleInputChange}
+          placeholder={'what should we watch?'}
         />
         <div className={'searchResultsWrapper'}>
           {results.map((result, resultIndex) => {
