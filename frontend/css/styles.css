@@ -109,12 +109,14 @@ body {
   margin-left: 2px;
 }
 
-#tooltip {
+.tooltip {
   background: white;
   padding: 5px;
+  border: 1px solid black;
+  z-index: 10;
 }
 
-#tooltip ul {
+.tooltip ul {
   margin: 0;
   padding: 0;
   list-style: none;

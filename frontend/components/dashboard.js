@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactCursorPosition from 'react-cursor-position';
 
 import SearchInput from './SearchInput';
 
@@ -20,7 +21,9 @@ const Dashboard = () => (
         <div className={'dashboardHeader'}>{'waffle'}</div>
       </div>
     </div>
-    <SearchInput />
+    <ReactCursorPosition>
+      <SearchInput />
+    </ReactCursorPosition>
   </div>
 );
 

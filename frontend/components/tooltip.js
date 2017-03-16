@@ -1,25 +1,35 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
-export default class ToolTip extends Component {
 
-  _style(){
-    return{
+const ToolTip = ({
+  location,
+  open,
+  torrent
+}) => {
+
+  const _style = () => {
+    return {
       position: "absolute",
-      top: this.props.location.y,
-      left: this.props.location.x,
-      display: this.props.open ? "block" : "none"
+      top: location.y,
+      left: location.x,
+      display: open ? "block" : "none"
     };
-  }
+  };
 
-  render(){
-    if(!this.props.torrent){ return <div></div> }
-    return(
-      <div style={this._style()} id="tooltip">
-        <ul>
-          <li>size: {this.props.torrent.size}</li>
-          <li>seeders: {this.props.torrent.seeders}</li>
-        </ul>
-      </div>
-    );
-  }
+  return (
+    <div style={_style()} className={'tooltipWrapper'}>
+      <ul>
+        <li>size: {torrent.size}</li>
+        <li>seeders: {torrent.seeders}</li>
+      </ul>
+    </div>
+  );
 }
+
+ToolTip.propType = {
+  location: PropTypes.object.isRequired,
+  open: PropTypes.bool.isRequired,
+  torrent: PropTypes.object.isRequired,
+};
+
+export default ToolTip;
