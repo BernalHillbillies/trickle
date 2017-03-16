@@ -14,10 +14,10 @@ const Dashboard = () => (
         className={'dashboardHeaderImage'}
       />
       <div className={'dashboardTitlesWrapper'}>
-        <div className={'dashboardHeader'}>{'waffle'}</div>
         <div className={'dashboardSubHeader'}>
           {'easy torrent streaming'}
         </div>
+        <div className={'dashboardHeader'}>{'waffle'}</div>
       </div>
     </div>
     <SearchInput />
