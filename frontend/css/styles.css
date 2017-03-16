@@ -48,7 +48,7 @@ body {
   border: none;
   border-bottom: 2px inset #e0d2c4;
 
-  width: 340px;
+  width: calc(100vw - 60px);
   height: 40px;
 
   color: #525252;
