@@ -15,6 +15,7 @@ export default class SearchInput extends Component {
       results: [],
       searchInput: '',
       debounceTimer: null,
+      toolTipOpen: false,
     };
 
     bindAll(this, '_handleInputChange', '_debounce');
@@ -43,7 +44,7 @@ export default class SearchInput extends Component {
   }
 
   render() {
-    const { results, searchInput } = this.state;
+    const { results, searchInput, toolTipOpen } = this.state;
     const isSearchInput = searchInput.length > 0;
     return (
       <div className={'searchInputWrapper'}>
@@ -61,15 +62,18 @@ export default class SearchInput extends Component {
         >
         {isSearchInput ? (
           <div>
-            {results.map((result, resultIndex) => (
-              <div
-                className={'searchResultWrapper'}
-                key={resultIndex}
-                data-magnetlink={result.magnetLink}
-              >
-                {result.name}
-              </div>
-            ))}
+            {results.map((result, resultIndex) => {
+              return (
+                <div
+                  className={'searchResultWrapper'}
+                  key={resultIndex}
+                  data-magnetlink={result.magnetLink}
+                >
+                  {result.name}
+                  {/* <ToolTip location={mouseLocation} torrent={result} open={toolTipOpen} /> */}
+                </div>
+              );
+            })}
           </div>
         ) : (
           <div>
