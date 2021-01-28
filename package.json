@@ -46,7 +46,7 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "dotenv": "^1.2.0",
-    "electron": "^1.6.2",
+    "electron": "^9.4.0",
     "lodash": "^4.17.4",
     "node-run-cmd": "^1.0.1",
     "peerflix": "^0.36.1",
